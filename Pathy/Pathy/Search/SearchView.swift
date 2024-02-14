@@ -7,12 +7,15 @@
 
 import SwiftUI
 
-struct SearchView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+struct SearchView<locationManager: LocationManager>: View {
+    let locationmanager: locationManager
 
-#Preview {
-    SearchView()
+    var body: some View {
+        Button {
+            locationmanager.startFetchingCurrentLocation()
+        } label: {
+            Text("Start Fetching Current Location")
+        }
+        .padding()
+    }
 }

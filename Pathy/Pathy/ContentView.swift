@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var locationManager = LocationManager()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if locationManager.hasLocationAccess == true {
+            SearchView(locationmanager: locationManager)
+            if let location = locationManager.userLocation {
+                Text("\(location.coordinate.latitude), \(location.coordinate.longitude)")
+            }
+        } else {
+            RequestLocationAccessView(locationmanager: locationManager)
         }
-        .padding()
     }
 }
 

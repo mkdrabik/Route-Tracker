@@ -11,6 +11,10 @@
 		3B70E1FE2B7C69B3009DA7BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E1FD2B7C69B3009DA7BF /* ContentView.swift */; };
 		3B70E2002B7C69B4009DA7BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B70E1FF2B7C69B4009DA7BF /* Assets.xcassets */; };
 		3B70E2032B7C69B4009DA7BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B70E2022B7C69B4009DA7BF /* Preview Assets.xcassets */; };
+		3B70E20B2B7C69D5009DA7BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E20A2B7C69D5009DA7BF /* LocationManager.swift */; };
+		3B70E20E2B7C6A30009DA7BF /* RequestLocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E20D2B7C6A30009DA7BF /* RequestLocationAccessView.swift */; };
+		3B70E2132B7C6A8B009DA7BF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E2122B7C6A8B009DA7BF /* SearchView.swift */; };
+		3B70E2152B7C6A98009DA7BF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		3B70E1FD2B7C69B3009DA7BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B70E1FF2B7C69B4009DA7BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B70E2022B7C69B4009DA7BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3B70E20A2B7C69D5009DA7BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3B70E20D2B7C6A30009DA7BF /* RequestLocationAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationAccessView.swift; sourceTree = "<group>"; };
+		3B70E2122B7C6A8B009DA7BF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +61,9 @@
 			children = (
 				3B70E1FB2B7C69B3009DA7BF /* PathyApp.swift */,
 				3B70E1FD2B7C69B3009DA7BF /* ContentView.swift */,
+				3B70E2092B7C69BF009DA7BF /* Shared */,
+				3B70E20C2B7C6A11009DA7BF /* RequestLocationAccess */,
+				3B70E20F2B7C6A4D009DA7BF /* Search */,
 				3B70E1FF2B7C69B4009DA7BF /* Assets.xcassets */,
 				3B70E2012B7C69B4009DA7BF /* Preview Content */,
 			);
@@ -65,6 +76,31 @@
 				3B70E2022B7C69B4009DA7BF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3B70E2092B7C69BF009DA7BF /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3B70E20A2B7C69D5009DA7BF /* LocationManager.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		3B70E20C2B7C6A11009DA7BF /* RequestLocationAccess */ = {
+			isa = PBXGroup;
+			children = (
+				3B70E20D2B7C6A30009DA7BF /* RequestLocationAccessView.swift */,
+			);
+			path = RequestLocationAccess;
+			sourceTree = "<group>";
+		};
+		3B70E20F2B7C6A4D009DA7BF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				3B70E2122B7C6A8B009DA7BF /* SearchView.swift */,
+				3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +173,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B70E2152B7C6A98009DA7BF /* SearchViewModel.swift in Sources */,
+				3B70E2132B7C6A8B009DA7BF /* SearchView.swift in Sources */,
 				3B70E1FE2B7C69B3009DA7BF /* ContentView.swift in Sources */,
+				3B70E20E2B7C6A30009DA7BF /* RequestLocationAccessView.swift in Sources */,
 				3B70E1FC2B7C69B3009DA7BF /* PathyApp.swift in Sources */,
+				3B70E20B2B7C69D5009DA7BF /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +314,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pathy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location to track the path you take during the walk or run.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -302,6 +343,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Pathy/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We will use your location to track the path you take during the walk or run.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -7,61 +7,33 @@
 
 import SwiftUI
 
-struct LocationRequestView: View {
+struct RequestLocationAccessView<locationManager: LocationManager>: View {
+    
+    let locationmanager: locationManager
     var body: some View {
         ZStack {
-            Color(.systemBlue).ignoresSafeArea()
+            Color(.black).ignoresSafeArea()
             
-            VStack {
-                Spacer()
+            VStack{
                 Image(systemName: "paperplane.circle.fill")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200, height: 200)
-                    .padding(.bottom, 32)
-                
-                Text("Would you like to explore places nearby?")
-                    .font(.system(size: 28, weight: .semibold))
+                    .frame(width: 50, height: 50)
+                    .foregroundColor(Color(.systemBlue))
+                Text("We will use your location to display resturants near you.")
+                    .font(.system(size: 17, weight: .regular))
                     .multilineTextAlignment(.center)
-                    .padding()
-                Text("Start sharing your location with us")
-                    .multilineTextAlignment(.center)
-                    .frame(width: 140)
-                    .padding()
-                
-                Spacer()
-                
-                VStack {
-                    Button {
-                        LocationManager.shared.requestLocation()
-                    } label: {
-                        Text("Allow location")
-                            .padding()
-                            .font(.headline)
-                            .foregroundColor(Color(.systemBlue))
-                    }
-                    .frame(width: UIScreen.main.bounds.width)
-                    .padding(.horizontal, -32)
-                    .background(.white)
-                    .clipShape(Capsule())
-                    .padding()
-                    
-                    Button {
-                        print("Dismiss")
-                    } label: {
-                        Text("Maybe later")
-                            .padding()
-                            .font(.headline)
-                            .foregroundColor(.white)
-                    }
+                    .foregroundColor(.white)
+                    .padding(5)
+                Button{
+                    locationmanager.requestLocationAccess()
+                } label: {
+                    Text("Allow Access")
+                        .font(.system(size: 17, weight: .regular))
                 }
-                .padding(.bottom, 32)
             }
-            .foregroundColor(.white)
         }
     }
 }
 
-#Preview {
-    LocationRequestView()
-}
+
