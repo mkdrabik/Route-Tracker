@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct RequestLocationAccessView<locationManager: LocationManager>: View {
-    
-    let locationmanager: locationManager
+struct RequestLocationAccessView: View {
+    let locationManager: LocationManager
+
     var body: some View {
         ZStack {
             Color(.black).ignoresSafeArea()
-            
-            VStack{
+
+            VStack {
                 Image(systemName: "paperplane.circle.fill")
                     .resizable()
                     .scaledToFit()
@@ -25,8 +25,8 @@ struct RequestLocationAccessView<locationManager: LocationManager>: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
                     .padding(5)
-                Button{
-                    locationmanager.requestLocationAccess()
+                Button {
+                    locationManager.requestLocationAccess()
                 } label: {
                     Text("Allow Access")
                         .font(.system(size: 17, weight: .regular))
@@ -35,5 +35,3 @@ struct RequestLocationAccessView<locationManager: LocationManager>: View {
         }
     }
 }
-
-

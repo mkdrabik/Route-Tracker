@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct SearchView<locationManager: LocationManager>: View {
-    let locationmanager: locationManager
+struct SearchView: View {
+    let locationManager: LocationManager
 
     var body: some View {
         Button {
-            locationmanager.startFetchingCurrentLocation()
+            locationManager.startFetchingCurrentLocation()
         } label: {
             Text("Start Fetching Current Location")
         }

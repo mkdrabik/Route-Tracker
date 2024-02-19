@@ -11,12 +11,12 @@ struct ContentView: View {
     @StateObject private var locationManager = LocationManager()
     var body: some View {
         if locationManager.hasLocationAccess == true {
-            SearchView(locationmanager: locationManager)
+            SearchView(locationManager: locationManager)
             if let location = locationManager.userLocation {
                 Text("\(location.coordinate.latitude), \(location.coordinate.longitude)")
             }
         } else {
-            RequestLocationAccessView(locationmanager: locationManager)
+            RequestLocationAccessView(locationManager: locationManager)
         }
     }
 }
