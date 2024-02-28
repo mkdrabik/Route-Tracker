@@ -20,7 +20,7 @@ struct RequestLocationAccessView: View {
                     .scaledToFit()
                     .frame(width: 50, height: 50)
                     .foregroundColor(Color(.systemBlue))
-                Text("We will use your location to display resturants near you.")
+                Text("We will use your location to track your run.")
                     .font(.system(size: 17, weight: .regular))
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)

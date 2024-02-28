@@ -57,6 +57,10 @@ extension LocationManager: CLLocationManagerDelegate {
     func startFetchingCurrentLocation() {
         manager.startUpdatingLocation()
     }
+    
+    func stopFetchingCurrentLocation(){
+        manager.stopUpdatingLocation()
+    }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)

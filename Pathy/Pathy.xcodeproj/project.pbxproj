@@ -13,8 +13,11 @@
 		3B70E2032B7C69B4009DA7BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B70E2022B7C69B4009DA7BF /* Preview Assets.xcassets */; };
 		3B70E20B2B7C69D5009DA7BF /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E20A2B7C69D5009DA7BF /* LocationManager.swift */; };
 		3B70E20E2B7C6A30009DA7BF /* RequestLocationAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E20D2B7C6A30009DA7BF /* RequestLocationAccessView.swift */; };
-		3B70E2132B7C6A8B009DA7BF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E2122B7C6A8B009DA7BF /* SearchView.swift */; };
-		3B70E2152B7C6A98009DA7BF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */; };
+		3B70E2132B7C6A8B009DA7BF /* RouteInProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B70E2122B7C6A8B009DA7BF /* RouteInProgressView.swift */; };
+		3B9A6FED2B8E576C00911537 /* RouteState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A6FEC2B8E576C00911537 /* RouteState.swift */; };
+		3B9A6FEF2B8E579D00911537 /* RouteInProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A6FEE2B8E579D00911537 /* RouteInProgressCardView.swift */; };
+		3B9A6FF12B8E57C800911537 /* RouteInProgressMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9A6FF02B8E57C800911537 /* RouteInProgressMapView.swift */; };
+		3B9D782E2B8FC76100370F1E /* RouteInProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9D782D2B8FC76100370F1E /* RouteInProgressViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +28,11 @@
 		3B70E2022B7C69B4009DA7BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B70E20A2B7C69D5009DA7BF /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		3B70E20D2B7C6A30009DA7BF /* RequestLocationAccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationAccessView.swift; sourceTree = "<group>"; };
-		3B70E2122B7C6A8B009DA7BF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
-		3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		3B70E2122B7C6A8B009DA7BF /* RouteInProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteInProgressView.swift; sourceTree = "<group>"; };
+		3B9A6FEC2B8E576C00911537 /* RouteState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteState.swift; path = "Pathy/Route In Progress/RouteState.swift"; sourceTree = SOURCE_ROOT; };
+		3B9A6FEE2B8E579D00911537 /* RouteInProgressCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteInProgressCardView.swift; path = "Pathy/Route In Progress/RouteInProgressCardView.swift"; sourceTree = SOURCE_ROOT; };
+		3B9A6FF02B8E57C800911537 /* RouteInProgressMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteInProgressMapView.swift; path = "Pathy/Route In Progress/RouteInProgressMapView.swift"; sourceTree = SOURCE_ROOT; };
+		3B9D782D2B8FC76100370F1E /* RouteInProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RouteInProgressViewModel.swift; path = "Pathy/Route In Progress/RouteInProgressViewModel.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +69,7 @@
 				3B70E1FD2B7C69B3009DA7BF /* ContentView.swift */,
 				3B70E2092B7C69BF009DA7BF /* Shared */,
 				3B70E20C2B7C6A11009DA7BF /* RequestLocationAccess */,
-				3B70E20F2B7C6A4D009DA7BF /* Search */,
+				3B70E20F2B7C6A4D009DA7BF /* Route in Progress */,
 				3B70E1FF2B7C69B4009DA7BF /* Assets.xcassets */,
 				3B70E2012B7C69B4009DA7BF /* Preview Content */,
 			);
@@ -94,13 +100,16 @@
 			path = RequestLocationAccess;
 			sourceTree = "<group>";
 		};
-		3B70E20F2B7C6A4D009DA7BF /* Search */ = {
+		3B70E20F2B7C6A4D009DA7BF /* Route in Progress */ = {
 			isa = PBXGroup;
 			children = (
-				3B70E2122B7C6A8B009DA7BF /* SearchView.swift */,
-				3B70E2142B7C6A98009DA7BF /* SearchViewModel.swift */,
+				3B70E2122B7C6A8B009DA7BF /* RouteInProgressView.swift */,
+				3B9A6FEC2B8E576C00911537 /* RouteState.swift */,
+				3B9A6FEE2B8E579D00911537 /* RouteInProgressCardView.swift */,
+				3B9A6FF02B8E57C800911537 /* RouteInProgressMapView.swift */,
+				3B9D782D2B8FC76100370F1E /* RouteInProgressViewModel.swift */,
 			);
-			path = Search;
+			path = "Route in Progress";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,12 +182,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B70E2152B7C6A98009DA7BF /* SearchViewModel.swift in Sources */,
-				3B70E2132B7C6A8B009DA7BF /* SearchView.swift in Sources */,
+				3B9A6FEF2B8E579D00911537 /* RouteInProgressCardView.swift in Sources */,
+				3B70E2132B7C6A8B009DA7BF /* RouteInProgressView.swift in Sources */,
 				3B70E1FE2B7C69B3009DA7BF /* ContentView.swift in Sources */,
 				3B70E20E2B7C6A30009DA7BF /* RequestLocationAccessView.swift in Sources */,
 				3B70E1FC2B7C69B3009DA7BF /* PathyApp.swift in Sources */,
+				3B9D782E2B8FC76100370F1E /* RouteInProgressViewModel.swift in Sources */,
+				3B9A6FF12B8E57C800911537 /* RouteInProgressMapView.swift in Sources */,
 				3B70E20B2B7C69D5009DA7BF /* LocationManager.swift in Sources */,
+				3B9A6FED2B8E576C00911537 /* RouteState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
