@@ -46,7 +46,7 @@ struct RouteInProgressView: View {
                 // Start location updates and stop collecting the route
                 locationManager.stopFetchingCurrentLocation()
                 vm.startCollectingRoute()
-                if let date = locationManager.userLocation {
+                if let location = locationManager.userLocation {
                     vm.stopCollectingRoute(routeStartTime: startTime)
                 }
 
