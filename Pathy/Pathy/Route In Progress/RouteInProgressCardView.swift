@@ -49,6 +49,7 @@ struct RouteInProgressCardView: View {
                     .font(.body)
                     .foregroundColor(.secondary)
                     .fontDesign(.default)
+                    .padding(.trailing, 45)
             }
             Spacer()
             VStack {
