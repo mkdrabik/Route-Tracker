@@ -7,11 +7,7 @@
 
 import Foundation
 
-<<<<<<< HEAD
 enum RouteType: String, Codable, CaseIterable{
-=======
-enum RouteType: String, Codable {
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
     case run
     case walk
     case hike

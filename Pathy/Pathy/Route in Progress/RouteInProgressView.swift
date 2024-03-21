@@ -10,10 +10,7 @@ import SwiftUI
 struct RouteInProgressView: View {
     @StateObject private var vm = RouteInProgressViewModel()
     @EnvironmentObject var locationManager: LocationManager
-<<<<<<< HEAD
     @Environment(\.dismiss) private var dismiss
-=======
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -32,7 +29,6 @@ struct RouteInProgressView: View {
                     vm.addLocationToRoute(location: lm)
                 }
             }
-<<<<<<< HEAD
         }.overlay(alignment: .center) {
             RouteInProgressLoadingStateView(state: vm.loadingState)
         }
@@ -75,21 +71,16 @@ struct RouteInProgressView: View {
                     .background(.ultraThickMaterial, in: .circle)
             }
             .padding(.trailing, 16)
-=======
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
         }
         .environmentObject(locationManager)
     }
 
-<<<<<<< HEAD
     func cancel() {
         // TODO: Tell location manager to stop location updates
         // TODO: Call dismiss from the enviroment (you'll need to add that at the very top of this struct)
         locationManager.stopFetchingCurrentLocation()
     }
 
-=======
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
     private func startStopSaveAction() {
         withAnimation(.bouncy) {
             switch vm.routeState {
@@ -108,7 +99,6 @@ struct RouteInProgressView: View {
                 if locationManager.userLocation != nil {
                     vm.stopCollectingRoute(routeStartTime: startTime)
                 }
-<<<<<<< HEAD
             case .ended(let startTime, let endTime):
                 Task {
                     // TODO: Call vm.saveRoute
@@ -118,12 +108,6 @@ struct RouteInProgressView: View {
                         dismiss()
                     }
                 }
-=======
-
-            case .ended:
-                // In a future stage, save route to the server
-                break
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
             }
         }
     }
