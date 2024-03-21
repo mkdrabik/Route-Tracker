@@ -33,9 +33,14 @@ struct RoutesService {
             
             let url = URL(string: "https://learning.appteamcarolina.com/pathy/routes")!
             let encoder = JSONEncoder()
+<<<<<<< HEAD
             let decoder = JSONDecoder()
             encoder.dateEncodingStrategy = .iso8601
             decoder.dateDecodingStrategy = .iso8601
+=======
+            encoder.dateEncodingStrategy = .iso8601
+            let decoder = JSONDecoder()
+>>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
             
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
@@ -53,7 +58,11 @@ struct RoutesService {
         // - You should use URL, URLRequest, and URLSession
         // - This method will be very simple and few lines of code
         
+<<<<<<< HEAD
         let url = URL(string: "https://learning.appteamcarolina.com/pathy/routes/\(route.id)")!
+=======
+        let url = URL(string: "https://learning.appteamcarolina.com/pathy/routes/\(route)")!
+>>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
         
