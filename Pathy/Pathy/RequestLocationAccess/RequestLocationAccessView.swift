@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RequestLocationAccessView: View {
-    let locationManager: LocationManager
+    @EnvironmentObject var locationManager: LocationManager
 
     var body: some View {
         ZStack {
