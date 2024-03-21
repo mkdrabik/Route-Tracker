@@ -76,7 +76,6 @@ class RouteInProgressViewModel: ObservableObject {
         formatter.allowedUnits = [.hour, .minute, .second]
         return formatter.string(from: startTime, to: endTime)!
     }
-<<<<<<< HEAD
 
     func saveRoute(startTime: Date, endTime: Date) async {
         // TODO: Update loading state
@@ -98,22 +97,4 @@ class RouteInProgressViewModel: ObservableObject {
             fatalError(String(describing: error))
         }
     }
-=======
-    /*
-     func saveRoute(startTime: Date, endTime: Date) async {
-         // TODO: Update loading state
-         // TODO: Use map to convert locations to be of type [RoutePoint]
-         // TODO: Instantiate a NewRoute using the local and instance variables
-         // - You should use your name for userName
-         loadingState = .loading
-        
-         do {
-             // TODO: Call service method
-            
-         } catch let error {
-             // TODO: Handle the error appropriately
-         }
-     }
-     */
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
 }

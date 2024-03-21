@@ -46,15 +46,9 @@ struct RouteListView: View {
                 // - Context: This is the onDismiss closure passed to fullScreenCover. It's
                 //   called when the sheet is dismissed
                 Task{
-<<<<<<< HEAD
                     await vm.fetchAllRoutes()
                 }
                 
-=======
-                    vm.fetchAllRoutes
-                }
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
-              
             } content: {
                 // TODO: Show RouteInProgressView as the fullScreenCover's content
                 RouteInProgressView()
@@ -63,26 +57,16 @@ struct RouteListView: View {
                 // TODO: Call vm.fetchAllRoutes
                 // - Hint: Do you need a Task block here? 🤔
                 Task {
-<<<<<<< HEAD
                     await vm.fetchAllRoutes()
-=======
-                    vm.fetchAllRoutes
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
                 }
             }
-            .task {
-                // TODO: Call vm.fetchAllRoutes
-                // - Hint: Do you need a Task block here? 🤔
-<<<<<<< HEAD
-                   await vm.fetchAllRoutes()
-=======
-                Task {
-                    vm.fetchAllRoutes
+                .task {
+                    // TODO: Call vm.fetchAllRoutes
+                    // - Hint: Do you need a Task block here? 🤔
+                    await vm.fetchAllRoutes()
                 }
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
             }
         }
-    }
     
     @ViewBuilder
     private var idleView: some View {
@@ -103,22 +87,11 @@ struct RouteListView: View {
             ForEach(routes) { route in
                 RouteListItemView(route: route)
                     .listRowInsets(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
-<<<<<<< HEAD
-=======
-                    // TODO: Use .listRowInsets(...) inside your ForEach to set the insets correctly (see Figma to figure out correct value. hint: look for multiple of 4)
-                    // TODO: Use .swipeActions(...) inside your ForEach to implement swipe to delete
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
                     .swipeActions {
                         Button(role: .destructive) {
                             Task {
                                 await vm.delete(route: route)
                             }
-<<<<<<< HEAD
-=======
-                            Task {
-                                await vm.delete(route: route)
-                            }
->>>>>>> 2e3bf9b055d4279da6f88b65f076c58a5db72d33
                         } label: {
                             Image(systemName: "trash")
                         }
