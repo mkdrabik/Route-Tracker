@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var locationManager = LocationManager()
+    @StateObject var locationManager = LocationManager()
     var body: some View {
-        if locationManager.hasLocationAccess == true {
-           RouteInProgressView(locationManager: locationManager)
-            /*if let location = locationManager.userLocation {
-                Text("\(location.coordinate.latitude), \(location.coordinate.longitude)")
-            }*/
-        } else {
-            RequestLocationAccessView(locationManager: locationManager)
+        NavigationStack {
+            if locationManager.hasLocationAccess == true {
+                RouteListView()
+            } else {
+                RequestLocationAccessView()
+            }
         }
+        .environmentObject(locationManager)
     }
 }
 

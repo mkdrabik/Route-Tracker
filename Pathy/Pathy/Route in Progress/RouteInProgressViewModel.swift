@@ -14,14 +14,17 @@ class RouteInProgressViewModel: ObservableObject {
     @Published var routeState: RouteState = .notStarted
     
     /// A list of rich locations describing the user's route until now
-    @Published var route: [CLLocation] = []
+    @Published var routes: [CLLocation] = []
+    
+    @Published var routeType: RouteType = .run
+    @Published var loadingState: RouteInProgressLoadingState = .idle
     
     var startTime: Date = .init()
     var endTime: Date = .init()
     
     /// Update the current route with a new location
     func addLocationToRoute(location: CLLocation) {
-        route.append(location)
+        routes.append(location)
     }
     
     /// Call this method to start collecting the route
@@ -40,7 +43,7 @@ class RouteInProgressViewModel: ObservableObject {
     /// A list of coordinates describing the user's route until now
     var coordinates: [CLLocationCoordinate2D] {
         var coords: [CLLocationCoordinate2D] = []
-        for location in route {
+        for location in routes {
             coords.append(location.coordinate)
         }
         return coords
@@ -48,10 +51,10 @@ class RouteInProgressViewModel: ObservableObject {
     
     /// The distance of the route so far, in miles
     var distance: Double {
-        guard var previousLocation = route.first else { return 0 }
+        guard var previousLocation = routes.first else { return 0 }
         var distanceMeters: Double = 0
         
-        for location in route {
+        for location in routes {
             distanceMeters += previousLocation.distance(from: location)
             previousLocation = location
         }
@@ -73,4 +76,20 @@ class RouteInProgressViewModel: ObservableObject {
         formatter.allowedUnits = [.hour, .minute, .second]
         return formatter.string(from: startTime, to: endTime)!
     }
+    /*
+     func saveRoute(startTime: Date, endTime: Date) async {
+         // TODO: Update loading state
+         // TODO: Use map to convert locations to be of type [RoutePoint]
+         // TODO: Instantiate a NewRoute using the local and instance variables
+         // - You should use your name for userName
+         loadingState = .loading
+        
+         do {
+             // TODO: Call service method
+            
+         } catch let error {
+             // TODO: Handle the error appropriately
+         }
+     }
+     */
 }

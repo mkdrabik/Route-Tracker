@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RouteInProgressView: View {
     @StateObject private var vm = RouteInProgressViewModel()
-    @ObservedObject var locationManager: LocationManager
+    @EnvironmentObject var locationManager: LocationManager
 
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -29,6 +29,7 @@ struct RouteInProgressView: View {
                 }
             }
         }
+        .environmentObject(locationManager)
     }
 
     private func startStopSaveAction() {
@@ -46,7 +47,7 @@ struct RouteInProgressView: View {
                 // Start location updates and stop collecting the route
                 locationManager.stopFetchingCurrentLocation()
                 vm.startCollectingRoute()
-                if let location = locationManager.userLocation {
+                if locationManager.userLocation != nil {
                     vm.stopCollectingRoute(routeStartTime: startTime)
                 }
 
@@ -59,5 +60,5 @@ struct RouteInProgressView: View {
 }
 
 #Preview {
-    RouteInProgressView(locationManager: .init())
+    RouteInProgressView().environmentObject(LocationManager())
 }
