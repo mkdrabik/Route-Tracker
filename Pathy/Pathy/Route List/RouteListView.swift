@@ -42,27 +42,19 @@ struct RouteListView: View {
                 }
             }
             .fullScreenCover(isPresented: $showingRouteInProgressScreen) {
-                // TODO: Call vm.fetchAllRoutes
-                // - Context: This is the onDismiss closure passed to fullScreenCover. It's
-                //   called when the sheet is dismissed
                 Task{
                     await vm.fetchAllRoutes()
                 }
                 
             } content: {
-                // TODO: Show RouteInProgressView as the fullScreenCover's content
                 RouteInProgressView()
             }
             .refreshable {
-                // TODO: Call vm.fetchAllRoutes
-                // - Hint: Do you need a Task block here? 🤔
                 Task {
                     await vm.fetchAllRoutes()
                 }
             }
                 .task {
-                    // TODO: Call vm.fetchAllRoutes
-                    // - Hint: Do you need a Task block here? 🤔
                     await vm.fetchAllRoutes()
                 }
             }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RouteInProgressCardView: View {
-    let vm: RouteInProgressViewModel
+    @ObservedObject var vm: RouteInProgressViewModel
     let startStopSaveAction: () -> Void
     
     var body: some View {

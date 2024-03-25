@@ -11,6 +11,7 @@ import SwiftUI
 
 class RouteInProgressViewModel: ObservableObject {
     /// The current state of the route state collection
+    
     @Published var routeState: RouteState = .notStarted
     
     /// A list of rich locations describing the user's route until now
@@ -28,7 +29,7 @@ class RouteInProgressViewModel: ObservableObject {
     }
     
     /// Call this method to start collecting the route
-    func startCollectingRoute() {
+   func startCollectingRoute() {
         startTime = Date()
         routeState = .inProgress(startTime: startTime)
     }
@@ -87,11 +88,12 @@ class RouteInProgressViewModel: ObservableObject {
             loadingState = .loading
             var routePoints: [RoutePoint] = []
             for location in routes{
-                let rp = RoutePoint(latitude: location.coordinate.latitude, longitude: location.coordinate.latitude, timestamp: location.timestamp)
+                let rp = RoutePoint(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude, timestamp: location.timestamp)
                 routePoints.append(rp)
             }
             let newRoute = NewRoute(userName: "Mason Drabik", distance: distance, startTime: startTime, endTime: endTime, type: routeType, routePoints: routePoints)
             try await RoutesService.create(route: newRoute)
+            loadingState = .success
         } catch {
             // TODO: Handle the error appropriately
             fatalError(String(describing: error))

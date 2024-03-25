@@ -59,8 +59,8 @@ struct RouteInProgressView: View {
         }
         .overlay(alignment: .topTrailing) {
             Button {
-                cancel()
                 dismiss()
+                cancel()
             } label: {
                 Image(systemName: "xmark")
                     .resizable()
@@ -76,8 +76,6 @@ struct RouteInProgressView: View {
     }
 
     func cancel() {
-        // TODO: Tell location manager to stop location updates
-        // TODO: Call dismiss from the enviroment (you'll need to add that at the very top of this struct)
         locationManager.stopFetchingCurrentLocation()
     }
 
@@ -85,7 +83,6 @@ struct RouteInProgressView: View {
         withAnimation(.bouncy) {
             switch vm.routeState {
             case .notStarted:
-                // Start location updates and start collecting a route
                 locationManager.startFetchingCurrentLocation()
                 vm.startCollectingRoute()
                 if let location = locationManager.userLocation {
@@ -93,7 +90,6 @@ struct RouteInProgressView: View {
                 }
 
             case .inProgress(let startTime):
-                // Start location updates and stop collecting the route
                 locationManager.stopFetchingCurrentLocation()
                 vm.startCollectingRoute()
                 if locationManager.userLocation != nil {
@@ -101,10 +97,8 @@ struct RouteInProgressView: View {
                 }
             case .ended(let startTime, let endTime):
                 Task {
-                    // TODO: Call vm.saveRoute
                     await vm.saveRoute(startTime: startTime, endTime: endTime)
                     if case .success = vm.loadingState {
-                        // TODO: Call dismiss from the environment if request was successful
                         dismiss()
                     }
                 }
