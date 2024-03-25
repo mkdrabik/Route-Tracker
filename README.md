@@ -1,5 +1,5 @@
 # p02-pathy
-Pathy - An app to track your different routes.
+Pathy - An app to track your different routes, feel free to look in the screenshots folder to see it in action.
 
 <img width="400" alt="Screenshot 2024-03-25 at 7 47 54 PM" src="https://github.com/mkdrabik/Pathy/assets/111398844/b14ed980-da4a-42e1-bda3-90f6b61fd37b">
 
